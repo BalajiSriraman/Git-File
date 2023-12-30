@@ -4,11 +4,16 @@ import { repoSchema } from "~/server/models/core";
 
 export default defineEventHandler(async (event) => {
 
-  console.log("event", event.node.req.headers)
 
   const token = event.node.req.headers.authorization
 
+  console.log("event", event.node.req.headers)
+  console.log("token", token)
+
   if (!token) {
+    console.log("no token")
+    console.log("event", event.node.req.headers)
+    console.log("token", token)
     return {
       status: 401,
       body: {
