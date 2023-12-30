@@ -1,0 +1,43 @@
+[
+  {
+    "name": ".gitignore",
+    "type": "file",
+    "children": []
+  },
+  {
+    "name": "Dockerfile",
+    "type": "folder",
+    "children": []
+  },
+  {
+    "name": "index.js",
+    "type": "file",
+    "children": []
+  },
+  {
+    "name": "package-lock.json",
+    "type": "file",
+    "children": []
+  },
+  {
+    "name": "package.json",
+    "type": "file",
+    "children": []
+  },
+  {
+    "name": "readme.md",
+    "type": "file",
+    "children": []
+  },
+  {
+    "name": "resources",
+    "type": "folder",
+    "children": [
+      {
+        "name": "aapt2",
+        "type": "folder",
+        "children": []
+      }
+    ]
+  }
+]
