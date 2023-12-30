@@ -51,7 +51,6 @@ export default function Home({ url }: { url: string }) {
         <div
           className={`relative mx-2 ${style.outer} ${style.button} rounded-lg h-[52px] w-[180px]`}
         >
-          {/* <a href={url}> */}
           <button
             onClick={() => window.location.assign(url)}
             className="bg-white text-black hover:bg-zinc-900 hover:text-white outline-none border-none text-lg font-semibold text-opacity-100 z-10 tracking-wide cursor-pointer h-12 w-44  flex justify-center items-center space-x-2 rounded-lg "
@@ -59,7 +58,6 @@ export default function Home({ url }: { url: string }) {
             <p>Get Started</p>
             <ArrowRightIcon className="h-7 w-5" aria-hidden="true" />
           </button>
-          {/* </a> */}
         </div>
       </div>
     </div>

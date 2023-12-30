@@ -1,11 +1,9 @@
-import Image from "next/image";
-import miniGitLogo from "@images/mini_git_logo.png";
-import { BranchBox } from "./branch";
+import Image from 'next/image';
+import miniGitLogo from '@images/mini_git_logo.png';
+import { BranchBox } from './branch';
 
 export default function Head(data: any) {
-  const githubUrl = `https://github.com/${data.data[0]}/${
-    data.data[1]
-  }/tree/${decodeURIComponent(data.data[2])}`;
+  const githubUrl = `https://github.com/${data.data[0]}/${data.data[1]}/tree/${data.data[2]}`;
 
   console.log(data.data[1]);
   return (
