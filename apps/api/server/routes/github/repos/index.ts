@@ -4,6 +4,8 @@ import { repoSchema } from "~/server/models/core";
 
 export default defineEventHandler(async (event) => {
 
+  console.log("event", event.node.req.headers)
+
   const token = event.node.req.headers.authorization
 
   if (!token) {
@@ -19,7 +21,7 @@ export default defineEventHandler(async (event) => {
   const octokit = new Octokit({
     auth: token,
   })
-  // duplicate reqs 
+  // duplicate reqs
   const username = await userDetails(token)
 
   // get public repos
