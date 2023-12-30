@@ -7,13 +7,7 @@ export default defineEventHandler(async (event) => {
 
   const token = event.node.req.headers.authorization
 
-  console.log("event", event.node.req.headers)
-  console.log("token", token)
-
   if (!token) {
-    console.log("no token")
-    console.log("event", event.node.req.headers)
-    console.log("token", token)
     return {
       status: 401,
       body: {
@@ -29,8 +23,11 @@ export default defineEventHandler(async (event) => {
   // duplicate reqs
   const username = await userDetails(token)
 
+  console.log("username", username)
+
   // get public repos
   const public_response = await octokit.request(`GET /users/${username.gname}/repos?per_page=100`).then((response) => {
+    console.log("public_response", response.data)
     return repoSchema.parse(response.data)
   }).catch((error) => {
     throw new Error(error.message)
@@ -38,6 +35,7 @@ export default defineEventHandler(async (event) => {
 
   // get repos with private visibility and owned by the user
   const private_response = await octokit.request(`GET /user/repos?per_page=100&page=1&visibility=private&affiliation=owner`).then((response) => {
+    console.log("private_response", response.data)
     return repoSchema.parse(response.data)
   }).catch((error) => {
     throw new Error(error.message)
